@@ -29,6 +29,6 @@ Please refer to the license in the repo
 
 ## Deployed github link
 
-*  
+*  https://github.com/Leonawesley/planner_app
 
-*  
+*  https://leonawesley.github.io/planner_app/
