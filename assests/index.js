@@ -3,8 +3,7 @@ let currentDate = moment().format("dddd , MMMM Do");
 $("#currentDay").text(currentDate);
 
 
-//
-
+//Function to create dynamic html page for the planner application
 $(function(){
     //storing the current hour
     const currentHour =  moment().format("H");
@@ -20,7 +19,6 @@ $(function(){
             timeTense = "present";
         }
         else if(i < currentHour){
-            console.log("past");
             timeTense = "past";
         }
         else{
@@ -54,4 +52,21 @@ $(function(){
        }
     }
 });
-    
+
+//To store the values in the textarea using local storage
+$(document).on('click', '.saveBtn', function(event) {
+    let eventItem = $(event.target).siblings("textarea").val();
+    let eventTime = $(event.target).attr("data-time");
+    localStorage.setItem(eventTime,eventItem);
+    let item = localStorage.getItem(eventTime);
+    $(event.target).siblings("textarea").val(item);
+
+   console.log(item);
+ });
+
+
+
+
+
+
+
